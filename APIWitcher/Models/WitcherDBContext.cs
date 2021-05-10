@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace APIWitcher
 {
-    public partial class WitcherWikiContext : DbContext
+    public partial class WitcherDBContext : DbContext
     {
-        public WitcherWikiContext()
+        public WitcherDBContext()
         {
         }
 
-        public WitcherWikiContext(DbContextOptions<WitcherWikiContext> options)
+        public WitcherDBContext(DbContextOptions<WitcherDBContext> options)
             : base(options)
         {
         }
@@ -48,13 +48,13 @@ namespace APIWitcher
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Cyrillic_General_CI_AS");
+            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
             modelBuilder.Entity<Activity>(entity =>
             {
                 entity.ToTable("Activity");
 
-                entity.HasIndex(e => e.Name, "UQ__Activity__737584F62C99B4DC")
+                entity.HasIndex(e => e.Name, "UQ__Activity__737584F6035D7AE1")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -68,7 +68,7 @@ namespace APIWitcher
             {
                 entity.ToTable("Beast");
 
-                entity.HasIndex(e => e.Name, "UQ__Beast__737584F6AA7FE3F9")
+                entity.HasIndex(e => e.Name, "UQ__Beast__737584F6F2E09AB5")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -86,12 +86,12 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdclassNavigation)
                     .WithMany(p => p.Beasts)
                     .HasForeignKey(d => d.Idclass)
-                    .HasConstraintName("FK__Beast__IDClass__5FB337D6");
+                    .HasConstraintName("FK__Beast__IDClass__0D7A0286");
 
                 entity.HasOne(d => d.IdimageNavigation)
                     .WithMany(p => p.Beasts)
                     .HasForeignKey(d => d.Idimage)
-                    .HasConstraintName("FK__Beast__IDImage__5EBF139D");
+                    .HasConstraintName("FK__Beast__IDImage__0E6E26BF");
             });
 
             modelBuilder.Entity<Bestiary>(entity =>
@@ -111,19 +111,19 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdbeastNavigation)
                     .WithMany(p => p.Bestiaries)
                     .HasForeignKey(d => d.Idbeast)
-                    .HasConstraintName("FK__Bestiary__IDBeas__6383C8BA");
+                    .HasConstraintName("FK__Bestiary__IDBeas__0F624AF8");
 
                 entity.HasOne(d => d.IdfeatureNavigation)
                     .WithMany(p => p.Bestiaries)
                     .HasForeignKey(d => d.Idfeature)
-                    .HasConstraintName("FK__Bestiary__IDFeat__628FA481");
+                    .HasConstraintName("FK__Bestiary__IDFeat__10566F31");
             });
 
             modelBuilder.Entity<Character>(entity =>
             {
                 entity.ToTable("Character");
 
-                entity.HasIndex(e => e.Name, "UQ__Characte__737584F6A63CC592")
+                entity.HasIndex(e => e.Name, "UQ__Characte__737584F6DF386752")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -143,24 +143,24 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdactivityNavigation)
                     .WithMany(p => p.Characters)
                     .HasForeignKey(d => d.Idactivity)
-                    .HasConstraintName("FK__Character__IDAct__787EE5A0");
+                    .HasConstraintName("FK__Character__IDAct__114A936A");
 
                 entity.HasOne(d => d.IdimageNavigation)
                     .WithMany(p => p.Characters)
                     .HasForeignKey(d => d.Idimage)
-                    .HasConstraintName("FK__Character__IDIma__797309D9");
+                    .HasConstraintName("FK__Character__IDIma__123EB7A3");
 
                 entity.HasOne(d => d.IdraceNavigation)
                     .WithMany(p => p.Characters)
                     .HasForeignKey(d => d.Idrace)
-                    .HasConstraintName("FK__Character__IDRac__778AC167");
+                    .HasConstraintName("FK__Character__IDRac__1332DBDC");
             });
 
             modelBuilder.Entity<Class>(entity =>
             {
                 entity.ToTable("Class");
 
-                entity.HasIndex(e => e.Name, "UQ__Class__737584F6D478C0AC")
+                entity.HasIndex(e => e.Name, "UQ__Class__737584F6815123EC")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -172,7 +172,7 @@ namespace APIWitcher
 
             modelBuilder.Entity<Component>(entity =>
             {
-                entity.HasIndex(e => e.Name, "UQ__Componen__737584F67DE3A486")
+                entity.HasIndex(e => e.Name, "UQ__Componen__737584F63E1EB3AD")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -186,7 +186,7 @@ namespace APIWitcher
             {
                 entity.ToTable("Country");
 
-                entity.HasIndex(e => e.Name, "UQ__Country__737584F61CC403F8")
+                entity.HasIndex(e => e.Name, "UQ__Country__737584F6954C6531")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -198,7 +198,7 @@ namespace APIWitcher
 
             modelBuilder.Entity<Equipment>(entity =>
             {
-                entity.HasIndex(e => e.Name, "UQ__Equipmen__737584F6063D134F")
+                entity.HasIndex(e => e.Name, "UQ__Equipmen__737584F6C3147FC9")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -218,12 +218,12 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdequipmentTypeNavigation)
                     .WithMany(p => p.Equipment)
                     .HasForeignKey(d => d.IdequipmentType)
-                    .HasConstraintName("FK__Equipment__IDEqu__440B1D61");
+                    .HasConstraintName("FK__Equipment__IDEqu__14270015");
 
                 entity.HasOne(d => d.IdimageNavigation)
                     .WithMany(p => p.Equipment)
                     .HasForeignKey(d => d.Idimage)
-                    .HasConstraintName("FK__Equipment__IDIma__4316F928");
+                    .HasConstraintName("FK__Equipment__IDIma__151B244E");
             });
 
             modelBuilder.Entity<EquipmentStructure>(entity =>
@@ -243,19 +243,19 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdcomponentNavigation)
                     .WithMany(p => p.EquipmentStructures)
                     .HasForeignKey(d => d.Idcomponent)
-                    .HasConstraintName("FK__Equipment__IDCom__5535A963");
+                    .HasConstraintName("FK__Equipment__IDCom__160F4887");
 
                 entity.HasOne(d => d.IdequipmentNavigation)
                     .WithMany(p => p.EquipmentStructures)
                     .HasForeignKey(d => d.Idequipment)
-                    .HasConstraintName("FK__Equipment__IDEqu__5441852A");
+                    .HasConstraintName("FK__Equipment__IDEqu__17036CC0");
             });
 
             modelBuilder.Entity<EquipmentType>(entity =>
             {
                 entity.ToTable("EquipmentType");
 
-                entity.HasIndex(e => e.Name, "UQ__Equipmen__737584F6044D8466")
+                entity.HasIndex(e => e.Name, "UQ__Equipmen__737584F65AFAEABE")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -269,7 +269,7 @@ namespace APIWitcher
             {
                 entity.ToTable("Feature");
 
-                entity.HasIndex(e => e.Name, "UQ__Feature__737584F6D5512E04")
+                entity.HasIndex(e => e.Name, "UQ__Feature__737584F627CFAD2F")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -292,7 +292,7 @@ namespace APIWitcher
             {
                 entity.ToTable("Ingredient");
 
-                entity.HasIndex(e => e.Name, "UQ__Ingredie__737584F6876694F6")
+                entity.HasIndex(e => e.Name, "UQ__Ingredie__737584F6DE6A5F4C")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -306,7 +306,7 @@ namespace APIWitcher
             {
                 entity.ToTable("Location");
 
-                entity.HasIndex(e => e.Name, "UQ__Location__737584F674755C6F")
+                entity.HasIndex(e => e.Name, "UQ__Location__737584F659014CA4")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -314,6 +314,8 @@ namespace APIWitcher
                 entity.Property(e => e.Description).IsRequired();
 
                 entity.Property(e => e.Idcountry).HasColumnName("IDCountry");
+
+                entity.Property(e => e.Idimage).HasColumnName("IDImage");
 
                 entity.Property(e => e.IdtypeLocation).HasColumnName("IDTypeLocation");
 
@@ -324,19 +326,24 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdcountryNavigation)
                     .WithMany(p => p.Locations)
                     .HasForeignKey(d => d.Idcountry)
-                    .HasConstraintName("FK__Location__IDCoun__6E01572D");
+                    .HasConstraintName("FK__Location__IDCoun__17F790F9");
+
+                entity.HasOne(d => d.IdimageNavigation)
+                    .WithMany(p => p.Locations)
+                    .HasForeignKey(d => d.Idimage)
+                    .HasConstraintName("FK__Location__IDImag__1DB06A4F");
 
                 entity.HasOne(d => d.IdtypeLocationNavigation)
                     .WithMany(p => p.Locations)
                     .HasForeignKey(d => d.IdtypeLocation)
-                    .HasConstraintName("FK__Location__IDType__6D0D32F4");
+                    .HasConstraintName("FK__Location__IDType__18EBB532");
             });
 
             modelBuilder.Entity<LocationType>(entity =>
             {
                 entity.ToTable("LocationType");
 
-                entity.HasIndex(e => e.Name, "UQ__Location__737584F6C7C1A703")
+                entity.HasIndex(e => e.Name, "UQ__Location__737584F60AB5E34A")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -350,7 +357,7 @@ namespace APIWitcher
             {
                 entity.ToTable("Potion");
 
-                entity.HasIndex(e => e.Name, "UQ__Potion__737584F697C8B1AB")
+                entity.HasIndex(e => e.Name, "UQ__Potion__737584F6DE0ACF4E")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -368,12 +375,17 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdimageNavigation)
                     .WithMany(p => p.Potions)
                     .HasForeignKey(d => d.Idimage)
-                    .HasConstraintName("FK__Potion__IDImage__03F0984C");
+                    .HasConstraintName("FK__Potion__IDImage__19DFD96B");
 
                 entity.HasOne(d => d.IdpotionTypeNavigation)
                     .WithMany(p => p.InverseIdpotionTypeNavigation)
                     .HasForeignKey(d => d.IdpotionType)
-                    .HasConstraintName("FK__Potion__IDPotion__02FC7413");
+                    .HasConstraintName("FK__Potion__IDPotion__1AD3FDA4");
+
+                entity.HasOne(d => d.IdpotionType1)
+                    .WithMany(p => p.Potions)
+                    .HasForeignKey(d => d.IdpotionType)
+                    .HasConstraintName("FK__Potion__IDPotion__29221CFB");
             });
 
             modelBuilder.Entity<PotionStructure>(entity =>
@@ -393,19 +405,19 @@ namespace APIWitcher
                 entity.HasOne(d => d.IdingredientNavigation)
                     .WithMany(p => p.PotionStructures)
                     .HasForeignKey(d => d.Idingredient)
-                    .HasConstraintName("FK__PotionStr__IDIng__07C12930");
+                    .HasConstraintName("FK__PotionStr__IDIng__1BC821DD");
 
                 entity.HasOne(d => d.IdpotionNavigation)
                     .WithMany(p => p.PotionStructures)
                     .HasForeignKey(d => d.Idpotion)
-                    .HasConstraintName("FK__PotionStr__IDPot__08B54D69");
+                    .HasConstraintName("FK__PotionStr__IDPot__1CBC4616");
             });
 
             modelBuilder.Entity<PotionType>(entity =>
             {
                 entity.ToTable("PotionType");
 
-                entity.HasIndex(e => e.Name, "UQ__PotionTy__737584F67E4EE475")
+                entity.HasIndex(e => e.Name, "UQ__PotionTy__737584F64992DA3A")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -419,7 +431,7 @@ namespace APIWitcher
             {
                 entity.ToTable("Race");
 
-                entity.HasIndex(e => e.Name, "UQ__Race__737584F6A2E59AF8")
+                entity.HasIndex(e => e.Name, "UQ__Race__737584F630A903EB")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");

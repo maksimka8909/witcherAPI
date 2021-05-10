@@ -26,7 +26,7 @@ namespace APIWitcher
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<WitcherWikiContext>(option => option.UseSqlServer(connection));
+            services.AddDbContext<WitcherDBContext>(option => option.UseSqlServer(connection));
             services.AddControllers();
         }
 

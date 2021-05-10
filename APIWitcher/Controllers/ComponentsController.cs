@@ -13,9 +13,9 @@ namespace APIWitcher.Controllers
     [ApiController]
     public class ComponentsController : ControllerBase
     {
-        private readonly WitcherWikiContext _context;
+        private readonly WitcherDBContext _context;
 
-        public ComponentsController(WitcherWikiContext context)
+        public ComponentsController(WitcherDBContext context)
         {
             _context = context;
         }

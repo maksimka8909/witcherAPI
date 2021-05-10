@@ -12,6 +12,7 @@ namespace APIWitcher
             Beasts = new HashSet<Beast>();
             Characters = new HashSet<Character>();
             Equipment = new HashSet<Equipment>();
+            Locations = new HashSet<Location>();
             Potions = new HashSet<Potion>();
         }
 
@@ -21,6 +22,7 @@ namespace APIWitcher
         public virtual ICollection<Beast> Beasts { get; set; }
         public virtual ICollection<Character> Characters { get; set; }
         public virtual ICollection<Equipment> Equipment { get; set; }
+        public virtual ICollection<Location> Locations { get; set; }
         public virtual ICollection<Potion> Potions { get; set; }
     }
 }

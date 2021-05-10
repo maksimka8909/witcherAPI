@@ -20,6 +20,7 @@ namespace APIWitcher
         public int? Idimage { get; set; }
 
         public virtual Image IdimageNavigation { get; set; }
+        public virtual PotionType IdpotionType1 { get; set; }
         public virtual Potion IdpotionTypeNavigation { get; set; }
         public virtual ICollection<Potion> InverseIdpotionTypeNavigation { get; set; }
         public virtual ICollection<PotionStructure> PotionStructures { get; set; }

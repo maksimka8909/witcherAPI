@@ -39,7 +39,6 @@ C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\runtimes\win-
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\obj\Debug\net5.0\APIWitcher.csprojAssemblyReference.cache
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\obj\Debug\net5.0\APIWitcher.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\obj\Debug\net5.0\APIWitcher.AssemblyInfoInputs.cache
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\obj\Debug\net5.0\APIWitcher.AssemblyInfo.cs
@@ -128,3 +127,4 @@ C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\zh-Hans\Micro
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+C:\Users\Fobos\source\repos\APIWitcher\APIWitcher\obj\Debug\net5.0\APIWitcher.csprojAssemblyReference.cache
