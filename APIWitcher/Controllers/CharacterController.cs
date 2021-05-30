@@ -42,7 +42,7 @@ namespace APIWitcher.Controllers
                           join race in _context.Races on characters.Idrace equals race.Id
                           join image in _context.Images on characters.Idimage equals image.Id
                           join activity in _context.Activities on characters.Idactivity equals activity.Id
-                          where characters.Name==name
+                          where characters.Name == name
                           select new
                           {
                               id = characters.Id,
@@ -54,5 +54,7 @@ namespace APIWitcher.Controllers
                           };
             return request;
         }
+
     }
+        
 }
